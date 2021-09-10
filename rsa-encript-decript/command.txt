@@ -1,0 +1,11 @@
+Generate RSA private key
+openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+
+Extract public key
+openssl rsa -pubout -in private_key.pem -out public_key.pem
+
+Encript
+cat top_secret.txt | openssl rsautl -encrypt -pubin -inkey public_key.pem > encripted.txt
+
+Decript
+openssl rsautl -decrypt -inkey private_key.pem -in encripted.txt -out decripted.txt

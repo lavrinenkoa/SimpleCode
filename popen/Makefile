@@ -1,0 +1,23 @@
+TOPDIR = ..
+
+BIN = tpopen
+CC       = gcc
+LINK     = ar cr 
+CFLAGS   = -Wall -O1
+
+CFLAGS = -I/usr/include/ -I$(TOPDIR)
+#LIBS    = $(TOPDIR)
+
+OBJS = $(BIN).o
+HS = *.c *.h Makefile
+
+all: $(BIN)
+
+.c.o:
+	$(CC) $(CFLAGS) -c $<
+
+$(BIN): $(OBJS) $(HS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIBS)
+
+clean:
+	rm -f $(OBJS) $(BIN)
