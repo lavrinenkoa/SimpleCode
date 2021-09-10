@@ -1,2 +1,2 @@
 # SimpleCode
-Simple code examples
+Simple code examples.
