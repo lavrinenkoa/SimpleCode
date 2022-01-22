@@ -4,7 +4,7 @@
 
 void sort(char *data, int n)
 {
-	char table[sizeof(char)] = { 0 };
+	int table[sizeof(char)] = { 0 };
 	int i, j, p = 0;
 
 	printf("in:  %s\n", data);
