@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX_CHAR (256)
+
 void sort(char *data, int n)
 {
-	char table[sizeof(char)] = { 0 };
+	int table[MAX_CHAR] = { 0 };
 	int i, j, p = 0;
 
 	printf("in:  %s\n", data);
@@ -14,8 +16,8 @@ void sort(char *data, int n)
 		table[data[i]]++;
 	}
 
-	for (i = 0; i < sizeof(char); i++) {
-//		printf("%d\t%d\n", m[i], i);
+	for (i = 0; i < MAX_CHAR; i++) {
+//		printf("%d\t%d\n", table[i], i);
 		for (j = 0; j < table[i]; j++) {
 			data[p++] = i;
 		}
